@@ -1,4 +1,4 @@
-package com.jada;
+package com.jada.test;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
