@@ -10,19 +10,19 @@ import org.jsoup.select.Elements;
 import com.jada.constants.CrolUrls;
 import com.jada.util.Utils;
 
-public class BobeaCrol {
+public class RuriCrol {
 	
 	public HashMap<String, ArrayList<String>> getBoardList() throws Exception {
 		
-		Document doc = Utils.getDoc(CrolUrls.BOBEA_DREAM);
+		Document doc = Utils.getDoc(CrolUrls.RURIWEB);
 		
 		ArrayList<String> titleList = new ArrayList<>();
 		ArrayList<String> linkList = new ArrayList<>();
 		HashMap<String, ArrayList<String>> dataMap = new HashMap<>();
 		
-		Elements contents = doc.select(".bsubject"); // <a> 태그 중 href 속성이 있는 것
+		Elements contents = doc.select(".deco"); // <a> 태그 중 href 속성이 있는 것
         for (Element data : contents) {
-        	if(contentsFilter(data.text())) {
+        	if(contentsFilter(data.attr("href"))) {
         		titleList.add(data.text());
         		linkList.add(data.attr("href"));
         	}
@@ -37,9 +37,10 @@ public class BobeaCrol {
 	
 	public boolean contentsFilter(String content) {
 		
-		if(content.indexOf("[공지]") >= 0) return false;
+		if(content.indexOf("javascript:") >= 0) return false;
+		if(content.length() == 0) return false;
 		
 		return true;
 	}
-	
+
 }
