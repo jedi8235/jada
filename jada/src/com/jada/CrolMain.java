@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.jada.site.BobeaCrol;
+import com.jada.site.ClienCrol;
 import com.jada.site.EtoCrol;
 import com.jada.site.OuCrol;
 import com.jada.site.RuriCrol;
@@ -18,12 +19,14 @@ public class CrolMain {
 			RuriCrol rc = new RuriCrol();
 			EtoCrol ec = new EtoCrol();
 			OuCrol oc = new OuCrol();
+			ClienCrol cl = new ClienCrol();
 			
-			printContents(bc.getBoardList(), "보배드림");
-			printContents(sc.getBoardList(), "에쎄랄");
-			printContents(rc.getBoardList(), "루리웹");
-			printContents(ec.getBoardList(), "이토");
-			printContents(oc.getBoardList(), "오유");
+//			printContents(bc.getBoardList(), "보배드림");
+//			printContents(sc.getBoardList(), "에쎄랄");
+//			printContents(rc.getBoardList(), "루리웹");
+//			printContents(ec.getBoardList(), "이토");
+//			printContents(oc.getBoardList(), "오유");
+			printContents(cl.getBoardList(), "클리앙");
 			
 			
 		} catch (Exception e) {
